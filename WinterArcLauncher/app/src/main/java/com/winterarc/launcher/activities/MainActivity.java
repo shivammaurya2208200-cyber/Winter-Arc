@@ -219,6 +219,18 @@ public class MainActivity extends Activity {
                 try {
                     currentHabitState.put(habits.get(index), !isActive);
                     saveDataForCurrentDate();
+                    
+                    if (!isActive) {
+                        String[] congrats = {
+                            "Outstanding work! Keep the momentum going.",
+                            "One step closer to greatness.",
+                            "Discipline equals freedom. Well done.",
+                            "Another victory for the Winter Arc.",
+                            "Proud of you. Keep pushing."
+                        };
+                        String msg = congrats[new java.util.Random().nextInt(congrats.length)];
+                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
                 } catch (JSONException e) { e.printStackTrace(); }
             });
 

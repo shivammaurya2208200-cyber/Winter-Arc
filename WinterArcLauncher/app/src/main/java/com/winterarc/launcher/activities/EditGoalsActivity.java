@@ -59,8 +59,13 @@ public class EditGoalsActivity extends Activity {
             gd.setCornerRadius(30f);
             btnRec.setBackground(gd);
             
+            // Convert DP to PX for padding
+            int paddingH = (int) (16 * getResources().getDisplayMetrics().density);
+            int paddingV = (int) (8 * getResources().getDisplayMetrics().density);
+            btnRec.setPadding(paddingH, paddingV, paddingH, paddingV);
+            
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT, 100);
+                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             lp.setMargins(0, 0, 16, 0);
             btnRec.setLayoutParams(lp);
             
